@@ -1,0 +1,15 @@
+#AULA 41 - Integração continua com GitHuba Actions [https://www.udemy.com/course/testes-automatizados-com-cypress-basico/learn/lecture/31148180#overview]
+#Exemplo da pagina [https://github.com/cypress-io/github-action]
+#Modificado para ficar igual ao do professor
+name: End-to-end tests
+on: [push]
+jobs:
+  cypress-run:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
