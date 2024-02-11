@@ -78,3 +78,14 @@ Cypress.Commands.add("uploadFile", (inputFile, path, file) => {
         })
 
 })
+
+Cypress.Commands.add("showAndHideMsg", (elem, msg) => {
+    cy.get(elem)
+        .should("not.be.visible")
+        .invoke("show")
+        .should("be.visible")
+        .and("contain", msg)
+        .invoke("hide")
+        .should("not.be.visible")
+
+})
